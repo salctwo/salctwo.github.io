@@ -1,1 +1,1 @@
-### whatever project name ###
+### Whatever Web Project ###
