@@ -29,7 +29,7 @@ p {
 <!--html code goes here-->
 
 	<div class="uno">
-		<p></p>
+		<p>click 0</p>
 	</div>
 
 
@@ -38,7 +38,7 @@ p {
 var oh = document.getElementsByClassName('uno')[0];
 var yep = oh.querySelector('p');
 var yepo = 'click';
-var yuju = 0;
+var yuju = 1;
 var back = oh.style.backgroundColor = 'red';
 
 
@@ -46,11 +46,11 @@ oh.onclick = function () {
 	yep.textContent = yepo + ' ' + yuju++;
 
 	if (yuju % 2) {
-		oh.style.backgroundColor= "blue";
+		oh.style.backgroundColor= "red";
 		}
 
 	else {
-		oh.style.backgroundColor= "red";
+		oh.style.backgroundColor= "blue";
 		}
 	}
 
