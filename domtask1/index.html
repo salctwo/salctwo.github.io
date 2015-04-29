@@ -3,15 +3,57 @@
 <title>DOM Tasks One</title>
 
 
-<script>
-//javascript code goes here
-</script>
+
 <style>
 /*stylessheats could go here*/
+
+.uno {
+	height: 300px;
+	width: 300px;
+	background-color: red;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 
+}
+
+p {
+	padding-top: 100px;
+}
+
+
 </style>
+
 </head>
+
 <body>
 <!--html code goes here-->
 
+	<div class="uno">
+		<p></p>
+	</div>
+
+
+<script>
+//javascript code goes here
+var oh = document.getElementsByClassName('uno')[0];
+var yep = oh.querySelector('p');
+var yepo = 'click';
+var yuju = 0;
+
+yep.textContent = yepo + ' ' + yuju;
+
+// function ohYeah() {
+// 	console.log('yeas');
+// }
+
+oh.onclick = function() { 
+	console.log (yep.textContent);
+}
+
+
+
+</script>
+
 </body>
+
 </html>
