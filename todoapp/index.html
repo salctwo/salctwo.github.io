@@ -45,7 +45,7 @@ li.striked{
 	<div class="container">
 		<input type="text" placeholder="TODO name"/><button onclick="scheduleTodo()">Schedule</button>
 		<ul class="todo-stack">
-			<li style="display:none;" class="todo"><input type="checkbox"/>Testing a TODO name</li>
+			<li style="display:;" class="todo"><input type="checkbox" onchange="myFunki()" />Testing a TODO name</li>
 			<li style="display:none;" class="todo"><input type="checkbox"/>Testing a TODO name</li>
 		</ul>
 	</div>
@@ -55,34 +55,42 @@ li.striked{
 //javascript code goes here
 
 
-
+	var myFunki = function () {
+		document.querySelector(".container input[type=checkbox").parentElement.className = "todo striked";
+	}
+	
 
 function scheduleTodo() {
 	var todoInpt = document.querySelector(".container input[type=text]");
 
 	var text = todoInpt.value;
 	console.log(text);
+	var li = document.createElement("LI");
+	var check = document.createElement("INPUT");
 
 	if (todoInpt.value.length > 0) {
-		var li = document.createElement("LI");
-		var check = document.createElement("INPUT");
+		
 		check.type = "checkbox";
 		li.appendChild(check);
 		li.className = 'todo';
 		var t = document.createTextNode(text);
 		li.appendChild(t);
 		document.body.querySelector("ul").appendChild(li);
-		todoInpt.value = '';
+
+		todoInpt.value = "";
 
 	}
 	
 	else {
-		todoInpt.value = '';
+		todoInpt.value = "";
 	}
 
-	
-
 }
+
+
+
+
+
 
 
 </script>
