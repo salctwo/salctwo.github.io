@@ -45,8 +45,7 @@ li.striked{
 	<div class="container">
 		<input type="text" placeholder="TODO name"/><button onclick="scheduleTodo()">Schedule</button>
 		<ul class="todo-stack">
-			<li style="display:;" class="todo"><input type="checkbox" onchange="myFunki()" />Testing a TODO name</li>
-			<li style="display:none;" class="todo"><input type="checkbox"/>Testing a TODO name</li>
+			<!-- <li style="display:;" class="todo"><input type="checkbox" onchange="myFunki()" />Testing a TODO name</li> -->
 		</ul>
 	</div>
 
@@ -55,9 +54,17 @@ li.striked{
 //javascript code goes here
 
 
-	var myFunki = function () {
-		document.querySelector(".container input[type=checkbox").parentElement.className = "todo striked";
-	}
+	var myFunki = function (event) {
+		// console.log(event.srcElement);
+		// (".container input[type=checkbox").parentElement.className = "todo striked";
+		var ingp = event.srcElement;
+		if (ingp.checked) {
+			ingp.parentElement.className = "todo striked";
+		}
+		else {
+			ingp.parentElement.className = "todo";
+		}
+}
 	
 
 function scheduleTodo() {
@@ -67,14 +74,19 @@ function scheduleTodo() {
 	console.log(text);
 	var li = document.createElement("LI");
 	var check = document.createElement("INPUT");
+	var remove = document.createElement("BUTTON");
 
 	if (todoInpt.value.length > 0) {
 		
 		check.type = "checkbox";
+		check.onchange = myFunki;
 		li.appendChild(check);
 		li.className = 'todo';
 		var t = document.createTextNode(text);
 		li.appendChild(t);
+		var pb = document.createTextNode("delete");
+		remove.appendChild(pb);
+		li.appendChild(remove);
 		document.body.querySelector("ul").appendChild(li);
 
 		todoInpt.value = "";
